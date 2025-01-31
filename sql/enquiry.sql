@@ -1,0 +1,8 @@
+CREATE TABLE enquiry(
+  id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  student VARCHAR(255),
+  program VARCHAR(255),
+  idNum BIGINT (20),
+  msg TEXT,
+  dateTimes TIMESTAMP
+);

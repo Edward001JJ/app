@@ -1,0 +1,65 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  background: #f5f5f5;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.flexBox{
+  background: #fff;
+  box-shadow: 0 7px 20px #0004;
+  border-radius: 5px;
+  padding: 12px;
+  width: 70%;
+}
+:is(.flexBox h1, .flexBox p){
+  text-transform: capitalize;
+  text-align: center;
+  color: #006eff;
+}
+.flexBox p{
+  color: #ff0000;
+  margin: 5px 0;
+}
+form{
+  width: 100%;
+}
+:is(input, textarea){
+  display: block;
+  padding: 8px 15px;
+  width: 100%;
+  margin: 12px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+textarea{
+  resize: none;
+  height: 120px;
+}
+button{
+  width: 25%;
+  padding: 7px 12px;
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: #006eff;
+  color: #fff;
+  border-radius: 4px;
+}
+@media (max-width: 600px) {
+  .flexBox{
+    width: 90%;
+  }
+}
+@media (max-width: 390px) {
+  .flexBox{
+    width: 100%;
+  }
+}

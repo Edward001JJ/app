@@ -1,0 +1,8 @@
+CREATE TABLE rps(
+  id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  player_id BIGINT (50),
+  win BIGINT,
+  lose BIGINT,
+  tie BIGINT,
+  new_scoreTime TIMESTAMP
+);

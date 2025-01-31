@@ -1,0 +1,7 @@
+CREATE TABLE admin_table(
+  id BIGINT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+  user VARCHAR (255),
+  email VARCHAR (255),
+  pwsd VARCHAR (255),
+  created_at TIMESTAMP
+);

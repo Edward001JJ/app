@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E.N.C My App</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="shortcut icon" href="enc-removebg-preview.jpeg" type="image/x-icon">
+</head>
+<body>
+  <div class="start-up" id="start-up">
+    <div class="logo">
+      <img src="enc-removebg-preview.jpeg" alt="">
+      <h2 class="start-up-text">e.n.c <span>my app - login</span></h2>
+      <div class="loader" id="loader">
+        <p>loading in</p>
+        <div id="flex"><span id="countdown"></span>%</div>
+      </div>
+    </div>
+  </div>
+  <div class="moduleBox age-box">
+    <div class="moduleBox contentBox">
+      <div class="title text">
+        <h3>e.n.c my app - login</h3>
+        <p id="chapel-msg"></p>
+      </div>
+      <form id="chapel" method="post">
+        <div class="box">
+          <div class="input-box col">
+            <input type="number" id="app_id" placeholder="Enter your App Id" name="app_id" autocomplete="off" required>
+            <input type="number" name="user_id" id="user_id" placeholder="Enter your Student Id" autocomplete="off" required>
+            <input type="password" id="password" placeholder="Enter your Student Code" name="password" autocomplete="off" required>
+          </div>
+        </div>
+        <button type="button" class="hero-btn width Btn">continue to dashboard</button>
+      </form>
+    </div>
+  </div>
+ 
+  <script src="main.js"></script>
+  <script>
+    const form = document.getElementById("chapel");
+    let msgBox = document.getElementById('chapel-msg');
+    const continueBtn = document.querySelector(".hero-btn");
+    form.onsubmit = (e)=>{
+      e.preventDefault();// preventing form from submitting
+    }
+    continueBtn.onclick = ()=>{
+      //msg sent
+      let xhr = new XMLHttpRequest(); //creating X?L object
+      xhr.open("POST", "login.php", true);
+      xhr.onload = ()=>{
+        if(xhr.readyState === XMLHttpRequest.DONE){
+          if(xhr.status === 200){
+            let data = xhr.response;
+            if(data == "success"){
+              location.href='index.php';
+            } else {
+              msgBox.innerHTML = data;
+            }
+          }
+        }
+      }
+      //we have to send the form data through ajax to php
+      let formData = new FormData(form); //creating new formData Object
+      xhr.send(formData); //sending the form data to php
+    }
+  </script>
+</body>
+</html>
