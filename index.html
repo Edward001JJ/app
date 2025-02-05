@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ENC My App</title>
+    <style>
+        body{
+            position: fixed;
+            inset: 0;
+            background: #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .box{
+            background: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            box-sizing: border-box;
+            box-sizing: 0 7px 20px #0004;
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: column;
+            display: none;
+        }
+        h1,p{
+            text-align: center;
+            color: #5106ff;
+        }
+        p{
+            color: rgb(255, 217, 0);
+            font-weight: 800;
+        }
+        button{
+            text-align: center;
+            text-transform: capitalize;
+            padding: 8px 25px;
+            border: #fff;
+            border-radius: 4px;
+            background: #0004;
+            cursor: pointer;
+        }
+        @media (max-width: 991px) {
+            .box{
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>welcome to enc my app</h1>
+        <p>the official mobile app of every nation college sierra leone</p>
+        <button type="button" onclick="location.href='http://enc.mypressonline.com/'">continue</button>
+    </div>
+</body>
+</html>
